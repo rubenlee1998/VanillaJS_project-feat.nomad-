@@ -4,30 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/base_style.css">
+    <link rel="stylesheet" href="css/position_style.css">
+    <link rel="stylesheet" href="css/clock.css">
+    <link rel="stylesheet" href="css/weather.css">
+    <link rel="stylesheet" href="css/todo.css">
+    <link rel="stylesheet" href="css/input.css">
+    <link rel="stylesheet" href="css/quote.css">
+    <link rel="icon" href="/cloneCodingProject/icon-img/icons8-별-gradient-32.png">
+    <title>Momentum</title>
 </head>
 <body>
-    <form id="login-form" class="hidden">
-        <input required maxlength="15" type="text" placeholder="What is your name?">
-        <button>Log In</button>
-    </form>
-    <h2 id="clock">00:00:00</h2>
-    <h1 id="greeting" class="hidden"></h1>
-    <form id="todo-form">
-        <input type="text" placeholder="Write a To do and Press Enter" required>
-    </form>
-    <ul id="todo-list"></ul>
-
-    <div id="quote">
+    <div class="star location">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABmJLR0QA/wD/AP+gvaeTAAAQY0lEQVR4nO2deXxURbbHv+dWd0IAHR1BB1wQsgEB1EFHxmWE91gVZLNFxf29AR8+BsQdRZtRZlz4GBAFxQ2dmScmj0VFWUQTfG7zlKcfICoJ4IqoIIrsSfc97490dy6Z9Jq+SfhM/z6f+/mk61ad+t06VaeqTp17AxlkkEEGGWSQQQYZZJBBBhlk8M8EaW4CqaLjH/QslNMBxOb9rY/Ku83NKRUcdgroNFk7BAO8AJxb79abHpsxn8+Vb5uDV6o4rBSQN1Gza5QPUHpEybLOa/GbTXPkYJMSawSs5iaQDAIBJls2PSwFSwlYyl9DVyCU1isQZFJz80wGh80I6HWTttm7l8+A9gAqTN4yV2YDdJmgk0SZFcq6vU0bOq+bKXubi2syOGxGwP69TLCU9qGe/mXOduaF7x0dYK4Fn4XutT+wh+uak2syOCwUcPLV2srY3GAUQteMilKpDt9fO19qjM194fuWcvMJN2hOc3JOFIeFAnKyuM5SOoR6+FdmJwvq52mjPGMpX4TyHHfkXn7fHFyTRYtXQN5EzTbKTaGGRZT7nL0/jLXzpUZsHgzns5TbfnsYjIIWr4C2+/l3oxwfMi/bjmzLM9HyHszhSaNsDeXtsHc3Vzcl11TQohXQe5x6RbnZ0fvvf7dY9kfLv2mOHDQ2M8P5jXJ7kU+zmpJzsmjRCpAg11pKp1CDfmcMT8Qrc6TNY5byTajMidlHcFVTcE0VLVYBvcepV4Lc6rDpM9fOl33xypUvkAOWUhwu51Hu6D1OvU3BORW0WAVkVXOFgc4he/5DmxweS7TswQDzjPJ9aEnayVvNWDe5NgYtUgE+nxrRut4vMLN8ruxJtPy6v8heo8xyjJ47+/ZVj5ucU0WLVMC21oy1lIJQ4+20LB5NVoZ3H3MsZUdIRm5NJ8a4wbWxaHEK8PnUGJupkV0vzHr7admdrJzyUtlj4OGwHI/NHfi1xT1viyP0QzYXW0phqOfuEos5qcry7udhS/kxJKtb3yp86eSaDrQwBaiIcrvDds8uXyA/pSptdansspQ5kX0B3OVvYaOgRZEZcBkXGaVnyGz87KlmdmNlBr0UG2VXSGb39yoZkQ6u6UILUoCKUe6I9FabR1aWys7GSi1fID9ZytywXFWmgbaYc5AWo4DzL8VnKaeEXAh7PEJxrPy+EjVT3tWrp7yrV/tK1MTK64WHjLInJPvUC8ZwUXrZp45mWxv7fGr2eelEgHxLOFNtbnLcnvfyQtkRq/zJHblXbG4D6Hw8XaH274bw8vOyY+gYnSdwcyjpyWFjtJut/B0PVa1r+KK0VIKNfqgU4PpQHDVKTwh4yLeUfBXyRclXi0KULkBDjrKtUk2PpUujT75T39QOarEZCLubDwQ95D/QR76OVmbECD1Ks6gAOjZwuxphi9hsVKFKlCpbqPIEqFq8OLrMdCAtChg5Uo8VL/lqUyAW+arkQ+RqnYSozTZc+GKpfBwr07T/0UeBCfWS595zrlwfq9zo0VpkW7wI5CbBaR9QBVSJUKU2VWJRqTVULVki3ychp0EkpQCfT7MCcJ4oZwkUUtfIv0ix/m0KlQKVKpTv38Oi5ctjh5T439KTUCqB7Hq3aoxN4bTz5LNY5YcM0eyctowWpa9CgUAB0CFF/rsIKwcqg8LbHlhT2sCBUTQkrIAxo/TXCH9T6JokyR+AKpRKFSoFqiyoClpUlZYm7t8J4543dT5EPW58YtrvZFyyMn0+bWts8m3IV8gXyEcpAPIR2iUjS+BTlLEvLJb/SzB/QgRPMkHWQhQyys9YtbZTa4dqpdY1cqOXkmHc+7p2sjxU0vDcAVAjFl1vP1e2pKvOyy7Qo/GSHxTyRSgUaucybPIRjoxSbEfQ0Lu0VL6MJz+hVVBWgKla1/i7RHkO4SOxqQoqlc+/JN8l+kCNQZbBj0ZtfACvBLkTuDZddf7XK/Ij8L+h6xBceqEeZ4QCtchHOVWFK6k1x+2sIHcA4+PJT2gEXD5CPwc6AYgy+C8vyspkHiIdeKhM81T4hPidJmhsiib/i2xsCl5OjB2hAwXCbfPFX5fKyfHKJLQRM0q7sFcRiw8bQzJVGPAbxeOIDYp2GYQ7m4OjJXzk4HFMQmUSyqRURo74gtzYOJrJ4+E1epqlXJJA44evSx9eo6c1NU9PkBsdjsSqhMokkslSnoTIocgt1w7TXU+/LH9KlWg8zFmlHb2GPBXyULoT4CogpruhHgwBVs19Q58TqBBlU02QTRMHyjducb52mE4V5Zbwb5H4AQSQ4Bzg96u19QNeFjjfkTx9/jLxJ8kTAFWV+as5ESFXhDyEPFXyBPKo3SS1SUVuAtgLbELZhLAJ2KzKJm+QTdcM5GsR0VSEjhuqfuDu8G+FV48/nWF+v9jxyia8D7jBpzn79rJUhIGRROWBx16VW5Mh+9Qq7YjFa0D3ZMq5DYGKmgADxg+WbcmU+48LdLrCXeHfqqxq3YYRxaXR45ecSNgbWlwq+3e2YZixeSli5+CWCRfozGQIe8BnlO5J2PMmuSylKNuT3InZhCF6ryh3Oez+ioP7GJ5o40OS7ujSUqlu3xafpSyNVGpz48QhOjdRH7sVZIVR9jV3gzdw7Tc1JLi8Vpk4RIst6s4vLOXVffsYuaBcDiTTpik548b1Vm9OexYCoxzJjx/dhwmJ2L3nV+i5WCyDqDvJpsZey2LEmP6yOn5WlUmDmQX8IZIkLLPhojlx/FgNIWVvqM+n5oRdLEC43CHsySN/y/hElFCyUnujrEjW1+ICfrQtzr9kgLwXP6vKlEHMUXB6XUv37mDs/LVSk0rljXJH+3xqOu3iaYUrHclPH3EWv09ECYtf025q8xrK8Y3h0Qh8p8rAi4bIungZ/X61dr/DExzq5njhiGou95dLIFUCjT4P8PnUdPmZJ1UPCQVf2LqaKxIhtmS5niywmuR89I2H8qXx0H/YQIm7YfL51HTexVPgCPQVnm99kCsb0/i1YtICldv68whSd0giUJJdw9hECK5YoR0CNquQqK+fphUKG4MWA0YMkq/i5fX51OT+xDPAFY7yT+WczbhERnk8pPFIUuX2/jws8J8O6f+9YyeXJWIfV67UYzXISoVT08epQVQYDwMHJrAr9vnU5P3Is0JdcK/AE95zuC4djR+Sl06o3PmvFEPdu7oCr/yUxehEVghlS/SomixeAc5KL68IPrAOMrj/KPkhXka/T7OCO1moMDKcpsJjM1YzAVLbMTcEVw7l7+6nMxCmOipZjs0ofwJr5NWL9RjJYgvpX6LutpQu/YbFjraA2sZnJyWqDI8kKg9NL+OmdDY+uBgV4e+n9wt1zimU5UpiSihfpptI/6S8pe9QiSvT31dbWcIShcHhNIUH/GXJuVwShWuBWf4yudVSZjjcFkMM8V+yKCvTVh6lk0chzVend0rivzVp4AlRBjt2uDPcanxwOTJuWrncaZS7Hdv9q2acq7+OVabVHronePCS7GXIjh1Q8Ofz9AyjXO4oc/e0cnH1cMf10MSpa+SPlrIocqAjDIlJyI4E56b/gl6x6hYY4njDsnTqGvljelujged1u4JQJe+FHwzll7HyeqGnofb0Jd2XF3rGqltsjo7whL+n8qzJokliQ41N5HBahZgRFB6lZ1qXGQ5IHAUY2OZY48Q9UE8HmkQBlk2P8HrLVjbEzKuxG6mRiK2AIBVhnqIUucgjgqZRAHQn1LO8UBEt3yeL9Rg0wTBB4UuUpbV/MlLhxARKddj4srYrjLYXsKmw6oyymx0hAtfngFln6nHh7/wYZff17xA1Wsyr9ErAln9lhMmebAq6jZJJ3UbJpD3bybXgKgNb4pavjt6wk9/jC6PsDs0D7eadpcempxWiw3UFeCx6OI79KiTGTtIIPWOs47/3wm3eXRQUjJTZ+efXuTZOHy81haPkuZoA3bzKeKNsjSbHSHQFCKKW8nGYrx103wy5r4C6b7whdmz7b2wK/mHpaPOdR5niDXJy51Fyf+drou+kiy6W6s6jZX5WkHyPMsWE3pZ3XqIUxuJgwYbIUrQJvLOuzwEWFIXtv0h0+w8gykZHj9gh8KDZz6O/ujK577+deLHsB4q/fU7nB3O4XmvfjGkHoMqnMTnYVET8M00wEbuuAGPXPYTEWQGdcBGPbF3EdyitsrNY0n548i9oOxFS3APbX9R5B2sYJTYHjvdREquMR6igztF8eI8ARWWB1sX/eDTOCKgNjIrZQKkgpMhnE8pczQarLgavh6ISa95qLFydA545gxMs5ajwNx+uWJtc0FNz4N8+lG8sZWeI8y/+dqa759WuKiArUDcBW8p6N+tKJyylIvJecY27ZshVBVhatwQ1MTZgLQ0eZYNj5eTqROzqHODcARPH/ieDhb01lyATgbNDSW9jmHPJWtmclgqUCkfPdHUEuKsAhw9I4+wBEkHJadpebG7UAJM59C3J0wkwoeQUfSZoMf3SDxsXhu6BCq2bdl0dAe6diKGWgW7hoeytSX0ElBTpLxedoveZIJ9byq1GyW7A3+81yrisIJ8tOkUfX9wrdTdCK3OoCfLj3hdWXDsTXtJDc0Mx+ADbRq6Xht5Qj4mVvbTNfpikys3AUc57KpQBD4R+3iJKv3rFfxLhwRyYPWhd8h/yXtpTtyn8qrYy8kZuSJN5qwfXTJARejiGcVLm5/He6u1QzTUHbPwCHer1kvUI9wxfJ6WOtBVLe2p/Uf4Mtf9VAzgKZcYBuOGlnjrziN3M7vd5EpHLNhWWRBRQBLiiAPdWQVq3BDVxdsBh+FFrWXf1dTzAx2LzuON70VjKRmNz8YUbOGX4+kMaH4AR62X18A1yhgkywFLWOcq1E5v79rRh47IiHVfii/1llTBME/mEXFOACVLkcKjFtf8rumn/33RnrQUlRslz2OCvPTC+bXt6DP1YSuPtSod+IqvXVnCaR7nYKFscck6ylMfbVrB+eXf1aZz3GQxURLy4tnsTsXsKgKLIZibGHmB5V+27spu+C7xmKac6eu52o0zJ2Uf+kAqZ3y+JIFg/Yg/5WEpz9lFklCmWst0ht5soJau68c7yrto3mgwJ1o0AK/q/TGk03JvdlWMjkRD2Px7CrOyqvVd11RUGykTp4zBXu43iP2iTO+gTKU7KbtdDv8/lwKBPpPigTa5R/I7DFkTpY6BsVVddsbKr9q5fNsvmS4cC2qfKIR5cU4BH+Tk8hD1Cn3D6G4Va+HqhlniU940yyGEiDhgo9th0GfCpTB++sXGeUCeGb5TdAz6V6R6bLgaKjXLAUe8gj/L+64Va8kahRs4KxKKPI8/P6eJSH64tQ8vydRYSCdLdAyyk1ic/lENXXwHgWSvI9PM2xw8XTwfW5OqJtuFuauP963NZRu0XXsYAbQFQZvWrkhvc4OKaAt7O1WMDFuuA46JkUYVFKkzrVykxD0ncQlmBdhXlHoHRRGsL4Vux6fW7TbLdDQ6ufrLsnQLtGlReQA+NSFNYZdnccc4W+cDN+hPFW130dNtihuB4B7oWH4nhknM2uvfhD9e/Gaeo9XYu5xnhNGz2B5U3zvms6b9kkgjeytMiS+mHYmxh3dmbKXfzMCaDDDLIIIMMMsgggwwyyCCDDP758P9tjAi9QNoQOgAAAABJRU5ErkJggg==">
+        <a class="hidden" href="https://icons8.com/icon/44053/별">별 icon by Icons8</a>
+    </div>
+    <section class="box-container center location">
+        <h2 id="clock" class="clock">00:00:00</h2>
+        <form id="login-form" class="hidden">
+            <input class="name__input" required maxlength="15" type="text" placeholder="What is your name?">
+            <!-- <button>Log In</button> -->
+        </form>
+        <h1 id="greeting" class="hidden name"></h1>
+        <form id="todo-form">
+            <input class="todo__input" type="text" placeholder="☑ Write a To do & just do it!" required>
+        </form>
+        <ul class="list" id="todo-list"></ul>
+        
+        <div id="quote">
+            <span></span>
+            <span></span>
+        </div>  
+    </section>
+    <div id="weather" class="weather location">
         <span></span>
         <span></span>
     </div>
-
     <script src="js/greetings.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/quotes.js"></script>
     <script src="js/background.js"></script>
     <script src="js/todo.js"></script>
+    <script src="js/weather.js"></script>
 </body>
 </html>

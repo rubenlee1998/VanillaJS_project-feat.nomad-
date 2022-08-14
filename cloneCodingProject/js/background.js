@@ -8,6 +8,7 @@ const images = [
 const todaysImg = images[Math.floor(Math.random() * images.length)];
 
 const bgImage = document.createElement("img");
+bgImage.className = 'background';
 
 bgImage.src = `img/${todaysImg}`;
 

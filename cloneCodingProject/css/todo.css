@@ -1,0 +1,16 @@
+.list {
+  width: 280px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.list .toDo {
+  font-size: 22px;
+}
+
+.toDo__button {
+    background-color: transparent;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+  }
